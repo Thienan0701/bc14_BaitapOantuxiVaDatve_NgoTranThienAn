@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { actGetDatCuoc } from "./../../redux/actions";
 class Player extends Component {
   render() {
     const { mangHinh } = this.props;
-    console.log(mangHinh);
     return (
       <div>
         <div className="playerThink">
@@ -32,7 +32,7 @@ class Player extends Component {
                   style={border}
                   className="btnItem"
                   onClick={() => {
-                    console.log(item);
+                    this.props.GetDatCuoc(item.id);
                   }}
                 >
                   <img
@@ -54,4 +54,12 @@ const mapStateToProps = (state) => {
     mangHinh: state.OanTuXiReducer.mangHinh,
   };
 };
-export default connect(mapStateToProps, null)(Player);
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    GetDatCuoc: (ma) => {
+      dispatch(actGetDatCuoc(ma));
+    },
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Player);
