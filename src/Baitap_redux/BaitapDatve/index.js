@@ -1,8 +1,18 @@
 import React, { Component } from "react";
 import "./BaiTapBookingTicket.css";
 import HangGhe from "./HangGhe";
+import DataDanhsachGhe from "./danhSachGhe.json";
 import ThongTinDatGhe from "./ThongTinDatGhe";
 export default class Datve extends Component {
+  renderHangGhe = () => {
+    return DataDanhsachGhe.map((hangGhe, index) => {
+      return (
+        <div key={index}>
+          <HangGhe hangGhe={hangGhe} soHangGhe={index} />
+        </div>
+      );
+    });
+  };
   render() {
     return (
       <div
@@ -36,12 +46,12 @@ export default class Datve extends Component {
                   className="mt-2"
                   style={{
                     display: "flex",
-                    flexDirection: "row",
+                    flexDirection: "column",
                     justifyContent: "center",
                   }}
                 >
                   <div className="screen"></div>
-                  <HangGhe />
+                  {this.renderHangGhe()}
                 </div>
               </div>
               <div className="col-4">

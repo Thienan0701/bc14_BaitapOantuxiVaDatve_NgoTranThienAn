@@ -4,7 +4,12 @@
   height: 100%;
   background-image: url(../assets/bgGameOanTuXi.png);
   background-size: 100%;
+  font-family: "fontGame";
   font-size: smaller;
+}
+@font-face {
+  font-family: "fontGame";
+  src: url("../font/Pony.ttf");
 }
 .speech-bubble {
   position: relative;
