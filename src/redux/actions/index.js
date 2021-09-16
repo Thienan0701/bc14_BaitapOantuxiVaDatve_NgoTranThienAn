@@ -18,4 +18,22 @@ const actReturnResult = () => {
     payload: null,
   };
 };
-export { actGetDatCuoc, actClickPlay, actReturnResult };
+const actGetGheDaDat = (ghe) => {
+  return {
+    type: actType.GET_GHE_DAT,
+    payload: ghe,
+  };
+};
+const actHuyGhe = (soGhe) => {
+  return {
+    type: actType.HUY_GHE,
+    payload: soGhe,
+  };
+};
+export {
+  actGetDatCuoc,
+  actClickPlay,
+  actReturnResult,
+  actGetGheDaDat,
+  actHuyGhe,
+};

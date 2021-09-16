@@ -3,7 +3,8 @@ import "./BaiTapBookingTicket.css";
 import HangGhe from "./HangGhe";
 import DataDanhsachGhe from "./danhSachGhe.json";
 import ThongTinDatGhe from "./ThongTinDatGhe";
-export default class Datve extends Component {
+
+class Datve extends Component {
   renderHangGhe = () => {
     return DataDanhsachGhe.map((hangGhe, index) => {
       return (
@@ -67,3 +68,4 @@ export default class Datve extends Component {
     );
   }
 }
+export default Datve;
